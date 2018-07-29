@@ -5,6 +5,7 @@
 	<artifactId>IbatisTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TestIbatis</name>
+	<description>Test the integration of Spring 4 and old Ibatis 2</description>
 	<repositories>
 		<repository>
 			<id>alfresco</id>
