@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE sqlMap PUBLIC '-//iBATIS.com//DTD SQL Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap>
+
+	<typeAlias type="com.mondaka.test.ibatis.entities.Title" alias = "titleClass"/>
+
+	<resultMap class="titleClass" id="titleResult">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="author" column="author" />
+		<result property="submissionDate" column="submission_date" />
+	</resultMap>
+	<insert id="insertTitle" parameterClass="titleClass">
+		insert into ibatistest_tbl
+		(id,title,author,submission_date)
+		values
+		(#id#,#title#,#author#,#submissionDate#)
+	</insert>
+	<select id="selectTitleById" resultMap="titleResult" parameterClass="int">
+		select
+		id,title,author,submission_date
+		from ibatistest_tbl
+		where id = #id#
+	</select>
+</sqlMap>
